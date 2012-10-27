@@ -33,7 +33,6 @@ export EDITOR='subl -w'
 # Directory aliases
 hash -d repo=~/Code/
 hash -d code=~/Code/
-hash -d c=~/Code/
 
 ####################################################################################################
 #   Aliases                                                                                        #

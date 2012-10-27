@@ -15,8 +15,21 @@ else
   echo "  + Homebrew found."
 fi
 
-# Install grc and coreutils
-brew install grc coreutils ack cmake hub wget
+# Check if a brew is already installed. Install it, if this is not the case.
+function install {
+  if [ "`brew info $1 | grep "Not installed"`" != "" ]
+  then
+    brew install $1
+  fi
+} 
+
+# Install brews if necessary
+install grc
+install coreutils
+install ack
+install cmake
+install hub
+install wget
 
 # Disable press-and-hold for keys in favor of key repeat.
 defaults write -g ApplePressAndHoldEnabled -bool false
