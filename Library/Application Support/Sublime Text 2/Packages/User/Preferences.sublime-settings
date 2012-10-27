@@ -1,0 +1,11 @@
+{
+	"color_scheme": "Packages/Solarized Color Scheme (TextMate)/Solarized (dark).tmTheme",
+	"theme": "Soda Dark.sublime-theme",
+	"rulers":
+	[
+		100,
+		116
+	],
+	"spell_check": true,
+	"dictionary": "Packages/Language - English/en_US.dic"
+}

@@ -1,0 +1,17 @@
+{
+	"auto_upgrade_last_run": 1351347484,
+	"installed_packages":
+	[
+		"CMake",
+		"Dotfiles Syntax Highlighting",
+		"Git",
+		"GitHubinator",
+		"objc .strings syntax language",
+		"OpenGL Shading Language (GLSL)",
+		"Package Control",
+		"Solarized Color Scheme (TextMate)",
+		"SublimeCodeIntel",
+		"Theme - Soda",
+		"ZenCoding"
+	]
+}

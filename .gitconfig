@@ -1,0 +1,22 @@
+[user]
+	email = larsxschneider@gmail.com
+	name = Lars Schneider
+[mergetool]
+	keepBackup = true
+[alias]
+	co = checkout
+	st = status
+	ci = commit
+	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
+	wtf = ~/bin/git-wtf
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    ui = true
+[core]
+	editor = subl -n -w
+[help]
+    autocorrect = 1
+[hub]
+	host = git.autodesk.com
