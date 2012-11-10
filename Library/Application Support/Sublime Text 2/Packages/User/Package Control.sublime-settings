@@ -1,5 +1,5 @@
 {
-	"auto_upgrade_last_run": 1351347484,
+	"auto_upgrade_last_run": 1352479141,
 	"installed_packages":
 	[
 		"CMake",
@@ -9,7 +9,7 @@
 		"objc .strings syntax language",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
-		"Solarized Color Scheme (TextMate)",
+		"Solarized Color Scheme",
 		"SublimeCodeIntel",
 		"Theme - Soda",
 		"ZenCoding"
