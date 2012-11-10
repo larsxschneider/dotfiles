@@ -58,7 +58,7 @@ then
 fi
 
 # Sync private data with NAS
-alias syncprivate="rsync -av --stats --progress 192.168.168.168::backup/Private/ ~/Private"
+alias syncprivate="rsync -av --stats --progress 192.168.178.61::backup/Private/ ~/Private"
 
 # Always highlight grep search term
 alias grep='grep --color=auto'
