@@ -1,0 +1,11 @@
+#!/bin/sh
+#
+# Delete all remote branches that have been merged into origin/master. 
+#
+
+git push --dry-run --delete origin `git branch --remotes --merged origin/master | grep -v 'origin/HEAD' | grep -v 'origin/master' | grep '^  origin/lars' | sed $'s/^  origin\\// /' | tr -d '\n'`
+
+echo "DANGER ZONE: Do you want to do this? (abort with CTRL+C)"
+read NO_VAR
+
+git push --delete origin `git branch --remotes --merged origin/master | grep -v 'origin/HEAD' | grep -v 'origin/master' | grep '^  origin/lars' | sed $'s/^  origin\\// /' | tr -d '\n'`
