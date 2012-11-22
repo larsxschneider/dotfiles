@@ -16,6 +16,7 @@
     ui = true
 [core]
 	editor = subl -n -w
+	excludesfile = /Users/schneil/.git-global-exclude
 [help]
     autocorrect = 1
 [hub]
