@@ -21,3 +21,6 @@
     autocorrect = 1
 [hub]
 	host = git.autodesk.com
+	protocol = https
+[github "git.autodesk.com"]
+	user = schneil
