@@ -1,6 +1,11 @@
 {
 	"color_scheme": "Packages/Color Scheme - Default/Solarized (Dark).tmTheme",
 	"dictionary": "Packages/Language - English/en_US.dic",
+	"ignored_packages":
+	[
+		"Vintage",
+		"SublimeLinter"
+	],
 	"rulers":
 	[
 		100,
