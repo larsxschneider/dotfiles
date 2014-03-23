@@ -24,3 +24,5 @@
 	protocol = https
 [github "git.autodesk.com"]
 	user = schneil
+[push]
+	default = matching

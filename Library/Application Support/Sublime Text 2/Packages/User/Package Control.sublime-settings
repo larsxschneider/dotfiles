@@ -7,11 +7,12 @@
 		"File History",
 		"Git",
 		"GitCommitMsg",
-		"GitHubinator",
 		"objc .strings syntax language",
 		"OpenGL Shading Language (GLSL)",
 		"Package Control",
 		"Solarized Color Scheme",
+		"sublime-github",
+		"SublimeLinter",
 		"Theme - Soda"
 	]
 }

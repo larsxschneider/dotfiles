@@ -41,6 +41,12 @@ hash -d code=~/Code/Autodesk/
 # c.f http://stackoverflow.com/questions/1330226/in-require-no-such-file-to-load-gemname-loaderror
 export RUBYOPT="rubygems"
 
+# Add user-installed ruby gems to the path
+# c.f. http://guides.rubygems.org/faqs/#user-install
+if which ruby >/dev/null && which gem >/dev/null; then
+    PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
+fi
+
 export NODE_PATH="/usr/local/share/npm/lib/node_modules"
 
 export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
@@ -114,6 +120,7 @@ export EMSCRIPTEN_ROOT=~/Code/AIM360Viewer/3rdParty/External/Emscripten/
 
 hash -d aim=~/Code/Autodesk/AIM360Viewer
 hash -d sg=~/Code/Autodesk/scenario-generator-service
+hash -d iw=~/Code/Autodesk/p4-InfraWorks/git-source
 
 alias testchrome='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --disable-web-security --always-enable-dev-tools --enable-logging --v=1'
 alias standup='open -a /Applications/Safari.app https://meet.autodesk.com/hanspeter.johner/WQQR7ZJV; sleep 10; killall Safari'
