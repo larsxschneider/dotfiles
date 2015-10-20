@@ -22,11 +22,8 @@ function install {
 }
 
 # Install brews if necessary
-install grc
-install coreutils
 install ack
 install cmake
-install hub
 install wget
 
 
@@ -54,8 +51,11 @@ defaults write NSGlobalDomain AppleEnableMenuBarTransparency -bool false
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
 
 # Use AirDrop over every interface. srsly this should be a default.
-defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
+#defaults write com.apple.NetworkBrowser BrowseAllInterfaces 1
 
+# Allow text selection in the Quick Look window
+# c.f. https://github.com/sindresorhus/quick-look-plugins
+defaults write com.apple.finder QLEnableTextSelection -bool true
 
 
 ###############################################################################

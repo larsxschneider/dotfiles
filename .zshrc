@@ -29,8 +29,9 @@ zstyle ':completion:*' insert-tab pending
 # http://stackoverflow.com/questions/12508595/ignore-orig-head-in-zsh-git-autocomplete
 zstyle ':completion:*:*' ignored-patterns '*ORIG_HEAD'
 
-# Paths
-export PATH=~/bin:/opt/local/bin/gem:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin
+# Ensure user-installed binaries take precedence
+export PATH=~/bin:~/.gems:/opt/local/bin/gem:/usr/local/bin:/usr/local/sbin:/usr/bin:/bin:/usr/sbin:/sbin
+
 export EDITOR='subl -w'
 
 # Directory aliases
@@ -47,15 +48,20 @@ if which ruby >/dev/null && which gem >/dev/null; then
     PATH="$(ruby -rubygems -e 'puts Gem.user_dir')/bin:$PATH"
 fi
 
-export NODE_PATH="/usr/local/share/npm/lib/node_modules"
-
-export PYTHONPATH="/usr/local/lib/python2.7/site-packages:$PYTHONPATH"
-
 #faster history search
 #type first letter(s) of command you entered,
 #press up and find it at once
 # bindkey "\e[A" history-beginning-search-backward
 # bindkey "\e[B" history-beginning-search-forward
+
+# pip should only run if there is a virtualenv currently activated
+export PIP_REQUIRE_VIRTUALENV=true
+# cache pip-installed packages to avoid re-downloading
+export PIP_DOWNLOAD_CACHE=$HOME/.pip/cache
+
+export GEM_PATH="~/.gems"
+export GEM_PATH="$GEM_HOME"
+export GOPATH=$HOME/Code/go-Workspace
 
 
 ####################################################################################################
@@ -100,33 +106,26 @@ alias clr='clear;echo "Currently logged in on $(tty), as $(whoami) in directory 
 
 alias ghdiff='hub compare `git rev-parse HEAD`..`git rev-parse origin/HEAD`'
 
+alias rmsleep='su Administrator -c "sudo rm /private/var/vm/sleepimage"'
+
+# c.f. https://stackoverflow.com/questions/3231759/how-can-i-visualize-per-character-differences-in-a-unified-diff-file
+alias worddiff='git diff --color-words="[^[:space:]]|([[:alnum:]]|UTF_8_GUARD)+"'
+
+hash -d blog=~/Private/Code/larsxschneider.github.com/
+hash -d pc=~/Private/Code/
+
 # GRC colorizes nifty unix tools all over the place
 if $(grc &>/dev/null)
 then
   source `brew --prefix`/etc/grc.bashrc
 fi
 
-task() {
-    pushd "/Users/schneil";
-    	python ~/bin/rally-create-task.py --conf=.rallycfg "$*";
-    popd;
-
-}
-
 ####################################################################################################
 #   Work                                                                                           #
 ####################################################################################################
-export EMSCRIPTEN_ROOT=~/Code/AIM360Viewer/3rdParty/External/Emscripten/
-
-hash -d aim=~/Code/Autodesk/AIM360Viewer
-hash -d sg=~/Code/Autodesk/scenario-generator-service
-hash -d iw=~/Code/Autodesk/p4-InfraWorks/git-source
+hash -d code=~/Code
 
 alias testchrome='/Applications/Google\ Chrome\ Canary.app/Contents/MacOS/Google\ Chrome\ Canary --disable-web-security --always-enable-dev-tools --enable-logging --v=1'
 alias standup='open -a /Applications/Safari.app https://meet.autodesk.com/hanspeter.johner/WQQR7ZJV; sleep 10; killall Safari'
 
 export P4CONFIG=~/.p4settings
-
-#rbenv
-export PATH="$HOME/.rbenv/bin:$PATH"
-eval "$(rbenv init - zsh)"

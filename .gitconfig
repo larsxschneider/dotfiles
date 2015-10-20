@@ -1,5 +1,5 @@
 [user]
-	email = larsxschneider@gmail.com
+	email = lars.schneider@autodesk.com
 	name = Lars Schneider
 [mergetool]
 	keepBackup = true
@@ -9,6 +9,7 @@
 	ci = commit
 	lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' --abbrev-commit
 	wtf = ~/bin/git-wtf
+	p4 = !git-p4
 [color]
     diff = auto
     status = auto
@@ -16,7 +17,7 @@
     ui = true
 [core]
 	editor = subl -n -w
-	excludesfile = /Users/schneil/.git-global-exclude
+	excludesfile = ~/.git-global-exclude
 [help]
     autocorrect = 1
 [hub]
@@ -25,4 +26,29 @@
 [github "git.autodesk.com"]
 	user = schneil
 [push]
-	default = matching
+	default = upstream
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path =
+[mergetool "sourcetree"]
+	cmd = /Applications/SourceTree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[credential]
+	helper = osxkeychain
+[git-p4]
+	detectRenames = true
+	detectCopies = true
+[sendemail]
+    smtpencryption = tls
+    smtpserver = smtp.gmail.com
+    smtpuser = larsxschneider@gmail.com
+    smtpserverport = 587
+    from = larsxschneider@gmail.com
+    chainreplyto = false
+    suppresscc = self
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[lfs]
+	batch = false
