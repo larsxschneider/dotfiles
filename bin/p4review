@@ -1,3 +1,3 @@
 #!/bin/sh
 source $P4CONFIG
-/Applications/ccollab_client/ccollab --p4 ~/p4 --pause-on-error --scm perforce --p4port $P4PORT --p4user $P4USER --p4client $P4CLIENT addchangelist new $@
+~/Applications/ccollab_client/ccollab --p4 ~/bin/p4 --pause-on-error --scm perforce --p4port $P4PORT --p4user $P4USER --p4client $P4CLIENT addchangelist new $@
